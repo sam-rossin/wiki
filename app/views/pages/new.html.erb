@@ -1,2 +1,14 @@
-<h1>Pages#new</h1>
-<p>Find me in app/views/pages/new.html.erb</p>
+<div>
+  <%= form_for(@page) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Page name"%>
+    <%= f.fields_for :contents do |contents_form| %>
+      <div class="field">
+        <%= contents_form.text_area :words, placeholder: "Enter text here" %>
+      </div>
+      <%= contents_form.hidden_field :nested %>
+    <% end %>
+    <%= f.submit "Create Page", class: "btn btn-primary" %>
+  <% end %>
+</div>
+

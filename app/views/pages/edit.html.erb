@@ -1,2 +1,9 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<div>
+  <%= form_for(@content) do |f| %>
+    <%= hidden_field_tag :id, @page.id %>
+    <div class="field">
+      <%= f.text_area :words, :value => @page.contents.first.words %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  <% end %>
+</div>
