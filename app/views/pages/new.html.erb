@@ -1,7 +1,8 @@
-<div>
+<% provide(:title, "New Page") %>
+<div class="col-md-8">
+  <%= render "title" %>
   <%= form_for(@page) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: "Page name"%>
+    <%= f.text_field :name, :class => 'name', placeholder: "Page name"%>
     <%= f.fields_for :contents do |contents_form| %>
       <div class="field">
         <%= contents_form.text_area :words, placeholder: "Enter text here" %>

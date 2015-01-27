@@ -1,9 +1,9 @@
 class ContentsController < ApplicationController
   def create
-    page = Page.find(params[:id])
-    @content = page.contents.build(contents_params)
+    @page = current_page
+    @content = @page.contents.build(contents_params)
     @content.save
-    redirect_to root_url
+    redirect_to page_url(@page)
   end
 
   def destroy

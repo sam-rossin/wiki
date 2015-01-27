@@ -1,9 +1,11 @@
-<div>
+<% provide(:title, "Editing #{@page.name}") %>
+<div class="col-md-8">
+  <%= render "title" %>
   <%= form_for(@content) do |f| %>
     <%= hidden_field_tag :id, @page.id %>
-    <div class="field">
+    <div class="edit_field">
       <%= f.text_area :words, :value => @page.contents.first.words %>
     </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
+    <%= f.submit "Save Changes", class: "btn btn-primary" %>
   <% end %>
 </div>

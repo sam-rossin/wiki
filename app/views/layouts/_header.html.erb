@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top">
+  <div class="container">
+    <%= link_to "Sample Wiki", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <% if @show_page %>
+          <li><%= link_to "Edit", edit_page_path(@page) %></li>
+        <% end %>
+        <li><%= link_to "New", new_page_path %></li>
+        <li><%= link_to "Log in", "#" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
