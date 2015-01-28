@@ -1,5 +1,5 @@
 <% provide(:title, "Editing #{@page.name}") %>
-<div class="col-md-8">
+<div class="body">
   <%= render "title" %>
   <%= form_for(@content) do |f| %>
     <%= hidden_field_tag :name, @page.name %>

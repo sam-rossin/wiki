@@ -3,7 +3,7 @@
     <%= link_to "Sample Wiki", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Index", pages_path %></li>
         <% if @show_page %>
           <li><%= link_to "Edit", edit_page_path(@page.name) %></li>
         <% end %>

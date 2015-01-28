@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     @page = current_page
   end
   
+  def index
+    @pages = Page.all.paginate(page: params[:page])
+  end
+  
   private
     def pages_params
       params.require(:page).permit(:name, contents_attributes: [:words, :nested])

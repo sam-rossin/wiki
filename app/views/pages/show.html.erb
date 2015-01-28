@@ -1,5 +1,5 @@
 <% provide(:title, @page.name) %>
-<div class="col-md-8">
+<div class="body">
   <%= render "title" %>
   <%= RedCloth.new(@page.contents.first.words).to_html.html_safe %>
 </div>
