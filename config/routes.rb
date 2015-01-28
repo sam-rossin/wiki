@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :pages,             param: :name
+  resources :pages, param: :name do
+    member do
+      get :history
+    end
+  end
   resources :contents,          only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,6 @@
+<li>
+  <%= content.created_at %>|&nbsp;
+  <%= content.words[0,120] %>
+  <%= link_to "view", page_path(@page.name, version: content.id) %>|
+  <%= link_to "edit", edit_page_path(@page.name, version: content.id) %>
+</li>

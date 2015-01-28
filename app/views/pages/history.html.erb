@@ -1,0 +1,8 @@
+<% provide(:title, "#{@page.name}: History") %>
+<%= render "title" %>
+
+<ul class="history">
+  <%= render @pages %>
+</ul>
+
+<%= will_paginate %>

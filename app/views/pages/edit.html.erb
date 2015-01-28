@@ -4,7 +4,7 @@
   <%= form_for(@content) do |f| %>
     <%= hidden_field_tag :name, @page.name %>
     <div class="edit_field">
-      <%= f.text_area :words, :value => @page.contents.first.words %>
+      <%= f.text_area :words, :value => @current.words %>
     </div>
     <%= f.submit "Save Changes", class: "btn btn-primary" %>
   <% end %>

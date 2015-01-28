@@ -1,7 +1,8 @@
-35.times do |j|
-  page = Page.create!(name: "Test#{j}") 
-  2.times do |n|
-    page.contents.create!(words: "This is test #{n}")
+50.times do |j|
+  name = Faker::App.name
+  page = Page.create!(name: name + j.to_s) 
+  3.times do |n|
+    page.contents.create!(words: Faker::Lorem.paragraph)
   end
-  page.contents.create!(words: "This is my final form.")
+  page.contents.create!(words: Faker::Lorem.paragraph(10))
 end
