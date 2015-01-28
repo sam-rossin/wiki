@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages
+  resources :pages,             param: :name
   resources :contents,          only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

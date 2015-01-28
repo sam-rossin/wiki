@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
     @page = current_page
     @content = @page.contents.build(contents_params)
     @content.save
-    redirect_to page_url(@page)
+    redirect_to page_url(@page.name)
   end
 
   def destroy

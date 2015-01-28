@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.create(pages_params)
     if @page.save
-      redirect_to page_url(@page)
+      redirect_to page_url(@page.name)
     else
       redirect_to root_url
     end

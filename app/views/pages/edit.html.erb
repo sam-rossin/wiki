@@ -2,7 +2,7 @@
 <div class="col-md-8">
   <%= render "title" %>
   <%= form_for(@content) do |f| %>
-    <%= hidden_field_tag :id, @page.id %>
+    <%= hidden_field_tag :name, @page.name %>
     <div class="edit_field">
       <%= f.text_area :words, :value => @page.contents.first.words %>
     </div>

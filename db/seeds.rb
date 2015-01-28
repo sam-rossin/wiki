@@ -1,4 +1,4 @@
-page = Page.create!(name: "Test Page") 
+page = Page.create!(name: "Test") 
 
 5.times do |n|
     page.contents.create!(words: "This is test #{n}")
