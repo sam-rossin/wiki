@@ -35,7 +35,7 @@ class PagesController < ApplicationController
   end
   
   def index
-    @pages = Page.order(:name).all.paginate(page: params[:page])
+    @pages = Page.search(params[:search]).paginate(page: params[:page])
   end
   
   def history
