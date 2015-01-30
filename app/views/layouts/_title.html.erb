@@ -3,7 +3,7 @@
     <div class="search">
       <%= form_tag(pages_path, method: "get") do %>
         <%= text_field_tag(:search, params[:search], placeholder: "search") %>
-        <%= submit_tag("Search", :name => nil) %>
+        <%= submit_tag("Search", :name => nil, :class => "sbutt") %>
       <% end %>
     </div>
 </div>

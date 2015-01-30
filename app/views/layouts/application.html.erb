@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'favicon.ico' %>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,9 +12,10 @@
 
   <%= render 'layouts/header' %>
   <div class="container">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, sanitize(message), class: "alert alert-#{message_type}") %>
-      <% end %>
+    <%= render 'layouts/title' %>
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, sanitize(message), class: "alert alert-#{message_type}") %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>

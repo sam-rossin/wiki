@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :history] 
+  
   def new
     @page = Page.new
     @contents = @page.contents.build
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
   def edit
     @page = current_page
     if params[:version] && (params[:version] != @page.contents.first.id.to_s)
-      flash.now[:info] = "You are currently edit an older version of the page.
+      flash.now[:info] = "You are currently editing an older version of the page.
         To edit the newest version 
         #{view_context.link_to('click here', edit_page_path(@page.name))}.".html_safe
     end

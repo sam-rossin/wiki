@@ -1,4 +1,6 @@
 class ContentsController < ApplicationController
+  before_action :logged_in_user
+  
   def create
     @page = current_page
     @content = @page.contents.build(contents_params)

@@ -1,6 +1,5 @@
 <% provide(:title, "New Page") %>
 <div class="body">
-  <%= render "title" %>
   <%= form_for(@page) do |f| %>
     <%= f.text_field :name, :class => 'name', placeholder: "Page name"%>
     <%= f.fields_for :contents do |contents_form| %>

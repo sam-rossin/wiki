@@ -3,10 +3,11 @@
 <% else %>
   <% provide(:title, 'Index') %>
 <% end %>
-<%= render "title" %>
 
 <ul class="pages">
   <%= render @pages %>
 </ul>
 
+<div class =  "digg_pagination">
 <%= will_paginate %>
+</div>
